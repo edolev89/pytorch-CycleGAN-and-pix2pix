@@ -1,0 +1,9 @@
+Run:
+`python split_data.py --data_dir=/home/eden/sketch/data/trapezoid`
+
+`python combine_sketch_imgs.py --from_data_dir=/home/eden/sketch/data2 --to_data_dir=/home/eden/pytorch-CycleGAN-and-pix2pix/datasets/sketch --output_format=png [--resize_to=256]`
+
+Where `--from_data_dir` should have source and target dirs as sketch and depth accordingly, and train.csv, val.csv and test.csv files referencing the images for the sets.
+
+to sample subset of test:
+shuf -zn50 -e datasets/sketch_combined/test_full/*.png | xargs -0 cp -vt datasets/sketch_combined/test
